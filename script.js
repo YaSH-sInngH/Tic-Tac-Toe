@@ -103,6 +103,8 @@ function checkTie() {
             gameover = true;
             overaudio.play();
             infoDisplay.textContent = 'Game Ties!';
+            turnDisplay.textContent = '"Player X will start the game!"';
+            move = 'X';
         }
     }
 }
