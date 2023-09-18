@@ -74,10 +74,36 @@ reset.addEventListener('click', ()=>{
 // Function to check if the game tied or not.
 function checkTie() {
     const Box = document.querySelectorAll('.box');
-    const isTie = Array.from(Box).every(box => box.textContent === 'X' || box.textContent === 'O');
-    if (isTie) {
-        gameover = true;
-        overaudio.play();
-        infoDisplay.textContent = 'Game Ties!';
+    const isFull = Array.from(Box).every(box => box.textContent === 'X' || box.textContent === 'O');
+    
+    if (isFull) {
+        const wins = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        let hasWinner = false;
+
+        wins.forEach(array => {
+            const Xwins = array.every(cell => Box[cell].textContent === 'X');
+            const Owins = array.every(cell => Box[cell].textContent === 'O');
+            
+            if (Xwins || Owins) {
+                hasWinner = true;
+            }
+        });
+
+        if (!hasWinner) {
+            gameover = true;
+            overaudio.play();
+            infoDisplay.textContent = 'Game Ties!';
+        }
     }
 }
+
