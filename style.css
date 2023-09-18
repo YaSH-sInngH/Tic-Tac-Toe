@@ -127,50 +127,51 @@ nav ul{
 /* RESPONSIVE STYLING */
 @media (max-width: 1300px){
     nav{
-        padding: 35px;
+        padding: 25px;
     }
     nav ul{
         font-size: 4.5vw;
     }
     .turn{
-        font-size: 2.2rem;
-        margin-top: 150px;
+        font-size: 1rem;
+        margin: 40px 0px;
     }
     .Board{
-        margin-top: 200px;
+        margin-top: 20px;
         flex-direction: column;
     }
     .gif img{
-        margin-top: 100px;
-        width: 200px;
-        margin-left: 90px;
+        margin-top: 60px;
+        width: 80px;
+        margin-left: 40px;
     }
     .gif p{
         margin-left: auto;
-        font-size: 2rem;
+        font-size: 0.8rem;
         width: auto;
         padding: 0px 20px;
     }
     .game-board{
         display: grid;
-        grid-template-columns: repeat(3, 200px);
-        grid-template-rows: repeat(3, 200px);
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
     }
     .box{
-        font-size: 4.5vw;
+        font-size: 2rem;
     }
     .info{
-        margin-top: 80px;
-        font-size: 2.5rem;
+        margin: 25px;
+        font-size: 1.05rem;
     }
     .btn button{
-        padding: 25px;
-        width: 40%;
-        font-size: 2.5rem;
-        border: 8px solid black;
+        margin: 0;
+        padding: 15px;
+        width: 60%;
+        font-size: 1.1rem;
+        border: 5px solid black;
     }
     .btn button:hover{
         background-color: black;
-        border: 8px solid blue;
+        border: 5px solid blue;
     }
 }
