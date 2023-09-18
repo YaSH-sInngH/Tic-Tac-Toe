@@ -7,7 +7,7 @@ const boxes = document.querySelectorAll(".box");
 const reset = document.getElementById("reset");
 const infoDisplay = document.getElementById("infodisplay");
 const turndisplay = document.getElementById("turnDisplay");
-turnDisplay.innerHTML = '"Player X has the turn"';
+turnDisplay.innerHTML = '"Player X will start the game"';
 
 boxes.forEach(box => {
     box.addEventListener('click', addgo)
