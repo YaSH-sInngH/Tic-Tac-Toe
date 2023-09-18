@@ -48,7 +48,7 @@ wins.forEach(array => {
     gameover = true;
     overaudio.play();
     infoDisplay.textContent = Xwins ? '"Player X wins!"' : '"Player O wins!"';
-    turnDisplay.textContent = Xwins ? '"Player O has the turn!"' : '"Player X has the turn!"';
+    turnDisplay.textContent = Xwins ? '"Player O will start the game!"' : '"Player X will start the game!"';
     boxes.forEach(box => box.removeEventListener('click', addgo));
     }
     checkTie();
