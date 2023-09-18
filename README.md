@@ -3,7 +3,9 @@
 
 This is a game project where you can play Tic-Tac-Toe  
 
+## Play
 
+https://tic-tac-toe-game-in.netlify.app
 
 ## Tech Stack
 
