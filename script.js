@@ -1,14 +1,20 @@
 let move = "X"
 let audioturn = new Audio("click.wav");
 let gameover = false;
+let overaudio = new Audio("Game-over.wav");
 
 const boxes = document.querySelectorAll(".box");
 const reset = document.getElementById("reset");
+const infoDisplay = document.getElementById("infodisplay");
+const turndisplay = document.getElementById("turnDisplay");
+turnDisplay.innerHTML = '"Player X has the turn"';
 
 boxes.forEach(box => {
     box.addEventListener('click', addgo)
 });
 
+
+// Function for turn in the game which is printing "X" and "O" in the game.
 function addgo(e)
 {
     if(gameover) return;
@@ -17,8 +23,10 @@ function addgo(e)
     e.target.removeEventListener('click',addgo);
     audioturn.play();
     checkWin();
+    checkTie();
 }
 
+// Function to check the game is finished by winning 
 function checkWin() {
 const Box = document.querySelectorAll('.box');
 let wins = [
@@ -38,21 +46,38 @@ wins.forEach(array => {
 
     if (Xwins || Owins) {
     gameover = true;
-    alert(Xwins ? 'Player X wins!' : 'Player O wins!');
+    overaudio.play();
+    infoDisplay.textContent = Xwins ? '"Player X wins!"' : '"Player O wins!"';
+    turnDisplay.textContent = Xwins ? '"Player O has the turn!"' : '"Player X has the turn!"';
     boxes.forEach(box => box.removeEventListener('click', addgo));
     }
+    checkTie();
 })
 }
 
+
+// Adding eventlistener for Restart button 
 reset.addEventListener('click', ()=>{
     const Box = document.querySelectorAll('.box');
     Array.from(Box).forEach(element => {
         element.innerHTML = '';
     });
+    audioturn.play();
     gameover = false;
-
+    infoDisplay.textContent = '';
     boxes.forEach(box => {
         box.addEventListener('click', addgo);
     });
 
 })
+
+// Function to check if the game tied or not.
+function checkTie() {
+    const Box = document.querySelectorAll('.box');
+    const isTie = Array.from(Box).every(box => box.textContent === 'X' || box.textContent === 'O');
+    if (isTie) {
+        gameover = true;
+        overaudio.play();
+        infoDisplay.textContent = 'Game Ties!';
+    }
+}

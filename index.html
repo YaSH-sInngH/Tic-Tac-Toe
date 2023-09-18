@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+<!-- linked the style.css -->
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+<!-- Navbar of the game -->
 
     <nav>
         <ul>
@@ -15,8 +18,10 @@
         </ul>
     </nav>
 
-    <div class="turn">"X has the Turn"</div>
+<!-- Turn of the game -->
+    <div class="turn" id="turnDisplay"></div>
 
+<!-- GameBoard  -->
     <div class="Board">
         <div class="game-board">
             <div id="0" class="box bl-0 bt-0"></div>
@@ -32,14 +37,19 @@
 
         <div class="gif">
             <img src="blue-cat.gif" alt="gif-image">
+            <p>Let's Play</p>
         </div>
     </div>
+
+<!-- Displaying winner in the game -->
+    <div class="info" id="infodisplay"></div>
+
+<!-- Restart button of the game -->
     <div class="btn">  
         <button id="reset">Restart</button>
     </div>
 
-
-
+<!-- linked the javascript -->
     <script src="script.js"></script>
 </body>
 </html>

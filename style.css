@@ -11,9 +11,10 @@ body{
     padding: 0;
 }
 html{
-    background-color: rgb(245, 255, 255);
+    background-color: rgb(236, 252, 252);
 }
 
+/* Navbar of the game */
 nav{
     background-color: rgb(78 110 255);
     padding: 18px;
@@ -26,17 +27,20 @@ nav ul{
     font-family: 'Press Start 2P', cursive;
 }
 
+/* gameboard styling */
 .Board{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .game-board{
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    /* margin-top: 1vw; */
 }
+
+/* 'X' and 'O' styling */
 .box{
     display: flex;
     justify-content: center;
@@ -67,7 +71,7 @@ nav ul{
     cursor: not-allowed;
 }
 
-
+/* Restart button styling */
 .btn{
     display: flex;
     justify-content: center;
@@ -86,6 +90,8 @@ nav ul{
     background-color: black;
     border: 4px solid blue;
 }
+
+/* which player has the turn --styling */
 .turn{
     margin: 2vw;
     font-size: 1.1rem;
@@ -93,7 +99,78 @@ nav ul{
     font-family: 'Press Start 2P', cursive;
     color: rgb(12, 22, 129);
 }
+
+/* gif used in project --styling */
 .gif img{
-    margin-left: 250px;
+    margin-left: 260px;
     width: 150px;
+}
+.gif p{
+    margin-top: 15px;
+    margin-left: 270px;
+    width: 150px;
+    font-size: 0.9rem;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 900;
+    color: #ff0234;
+}
+
+/* winning message display --styling */
+.info{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(17, 17, 193);
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 1300px){
+    nav{
+        padding: 35px;
+    }
+    nav ul{
+        font-size: 4.5vw;
+    }
+    .turn{
+        font-size: 2.2rem;
+        margin-top: 150px;
+    }
+    .Board{
+        margin-top: 200px;
+        flex-direction: column;
+    }
+    .gif img{
+        margin-top: 100px;
+        width: 200px;
+        margin-left: 90px;
+    }
+    .gif p{
+        margin-left: auto;
+        font-size: 2rem;
+        width: auto;
+        padding: 0px 20px;
+    }
+    .game-board{
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(3, 200px);
+    }
+    .box{
+        font-size: 4.5vw;
+    }
+    .info{
+        margin-top: 80px;
+        font-size: 2.5rem;
+    }
+    .btn button{
+        padding: 25px;
+        width: 40%;
+        font-size: 2.5rem;
+        border: 8px solid black;
+    }
+    .btn button:hover{
+        background-color: black;
+        border: 8px solid blue;
+    }
 }
